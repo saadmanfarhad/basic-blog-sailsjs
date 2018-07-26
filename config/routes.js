@@ -28,6 +28,7 @@ module.exports.routes = {
     view: 'pages/homepage'
   },
 
+  'GET /articles/list': 'ArticlesController.list'
   /***************************************************************************
   *                                                                          *
   * More custom routes here...                                               *

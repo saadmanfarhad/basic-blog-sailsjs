@@ -6,7 +6,14 @@
  */
 
 module.exports = {
-  
-
+  list: function (req, res) {
+    Articles.find({}).exec(function (err, articles) {
+      if(!err){
+        res.view('pages/list', {articles: articles});
+      }
+      else{
+        res.status(500).send(err);
+      }
+    })
+  }
 };
-
