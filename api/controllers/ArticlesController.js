@@ -64,5 +64,26 @@ module.exports = {
         res.status(500).send(err);
       }
     })
+  },
+
+  update: function (req, res) {
+    var title = req.body.title;
+    var body = req.body.body;
+
+    Articles.update({
+      id: req.params.id
+    },{
+      title: title,
+      body: body
+    }).exec(function (err) {
+      if(!err){
+        res.redirect('/articles/list');
+      }
+      else{
+        res.status(500).send(err);
+      }
+    });
+
+    return false;
   }
 };
