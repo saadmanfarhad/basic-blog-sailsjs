@@ -32,7 +32,9 @@ module.exports.routes = {
 
   '/articles/add': {
     view: 'pages/add'
-  }
+  },
+
+  '/articles/create': 'ArticlesController.create',
   /***************************************************************************
   *                                                                          *
   * More custom routes here...                                               *

@@ -18,5 +18,21 @@ module.exports = {
   },
   add:function (req, res) {
     res.view('pages/add');
+  },
+  create: function (req, res) {
+    var title = req.body.title;
+    var body = req.body.body;
+
+    Articles.create({
+      title: title,
+      body: body
+    }).exec(function (err) {
+      if(!err){
+        res.redirect('/articles/list');
+      }
+      else{
+        res.status(500).send(err);
+      }
+    });
   }
 };
