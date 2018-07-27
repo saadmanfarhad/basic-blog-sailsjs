@@ -36,7 +36,9 @@ module.exports.routes = {
 
   '/articles/create': 'ArticlesController.create',
 
-  '/articles/delete/:id': 'ArticlesController.delete'
+  '/articles/delete/:id': 'ArticlesController.delete',
+
+  '/articles/edit/:id': 'ArticlesController.edit',
   /***************************************************************************
   *                                                                          *
   * More custom routes here...                                               *

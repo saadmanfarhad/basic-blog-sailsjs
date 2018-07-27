@@ -39,7 +39,6 @@ module.exports = {
   },
 
   delete: function (req, res) {
-    console.log(req.params);
     Articles.destroy({
       id: req.params.id
     }).exec(function (err) {
@@ -52,5 +51,18 @@ module.exports = {
     })
 
     return false;
+  },
+
+  edit: function (req, res) {
+    Articles.findOne({
+      id: req.params.id
+    }).exec(function (err, article) {
+      if(!err){
+        res.view('pages/edit', {article: article});
+      }
+      else{
+        res.status(500).send(err);
+      }
+    })
   }
 };
