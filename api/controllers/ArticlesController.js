@@ -15,5 +15,8 @@ module.exports = {
         res.status(500).send(err);
       }
     })
+  },
+  add:function (req, res) {
+    res.view('pages/add');
   }
 };
