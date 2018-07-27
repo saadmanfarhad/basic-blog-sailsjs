@@ -35,6 +35,8 @@ module.exports.routes = {
   },
 
   '/articles/create': 'ArticlesController.create',
+
+  '/articles/delete/:id': 'ArticlesController.delete'
   /***************************************************************************
   *                                                                          *
   * More custom routes here...                                               *
